@@ -10,13 +10,13 @@ for i in range(10):
         engine = create_engine(DATABASE_URL, echo=False)
         conn = engine.connect()
         conn.close()
-        print("✅ Connected to MySQL")
+        print("Connected to MySQL")
         break
     except Exception as e:
-        print("⏳ Waiting for MySQL...")
+        print("Waiting for MySQL...")
         time.sleep(3)
 if engine is None:
-    raise Exception("❌ Could not connect to MySQL")
+    raise Exception("Could not connect to MySQL")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()

@@ -1,37 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Mini Ecommerce Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>Mini Ecommerce Dashboard</title>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-<div class="container">
+<header class="navbar">
 
-    <div class="sidebar">
-        <h2>Ecommerce</h2>
+<div class="logo">Mini Ecommerce Website</div>
 
-        <button onclick="loadHome()">Dashboard</button>
-        <button onclick="loadUsers()">Users</button>
-        <button onclick="loadProducts()">Products</button>
-        <button onclick="loadOrders()">Orders</button>
-    </div>
+<nav>
+<button onclick="showHome()">Home</button>
+<button onclick="loadUsers()">Users</button>
+<button onclick="loadProducts()">Products</button>
+<button onclick="loadOrders()">Orders</button>
+</nav>
 
-    <div class="main">
-        <h1>Admin Panel</h1>
-        <div id="content">
-            Welcome to Mini Ecommerce Dashboard
-        </div>
-    </div>
+</header>
+
+<main class="content">
+
+<div id="homeView">
+
+<h1>Dashboard</h1>
+
+<div class="card-grid">
+
+<div class="card" onclick="loadUsers()">
+<h3>Users</h3>
+<p>Manage customers</p>
+</div>
+
+<div class="card" onclick="loadProducts()">
+<h3>Products</h3>
+<p>View and create products</p>
+</div>
+
+<div class="card" onclick="loadOrders()">
+<h3>Orders</h3>
+<p>Track and update orders</p>
+</div>
 
 </div>
 
-<script src="js/api.js"></script>
-<script src="js/home.js"></script>
-<script src="js/user.js"></script>
-<script src="js/product.js"></script>
-<script src="js/order.js"></script>
+</div>
+
+<div id="app"></div>
+
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/users.js"></script>
+<script src="js/products.js"></script>
+<script src="js/orders.js"></script>
 
 </body>
 </html>
