@@ -25,14 +25,13 @@ app.add_middleware(
 
 app.mount("/frontend", StaticFiles(directory="frontend"), name="frontend")
 
-@app.get("/dashboard")
-def dashboard():
-    return FileResponse("frontend/index.html")
+# @app.get("/dashboard")
+# def dashboard():
+#     return FileResponse("frontend/index.html")
 
 @app.get("/", tags=["Home"])
 def home():
-    return {"message": "API is running"}
-
+    return FileResponse("frontend/index.html")
 app.include_router(user_routes.router)
 app.include_router(product_routes.router)
 app.include_router(order_routes.router)
